@@ -1,0 +1,62 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.yuchang.TimeMaster</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>TimeMaster</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="yuchang.su@qq.com" url="https://www.yourcompany.com">yuchang.su</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+        <h1>模仿 VSCode 的 TimerMaster 插件</h1>
+        <ul>
+            <li>1. 记录编辑器的使用情况</li>
+            <li>2. 统计编码量</li>
+        </ul>
+    ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationConfigurable
+                instance="com.yuchang.timemaster.config.TimerMasterConfig"
+                id="com.yuchang.timemaster.config.TimerMasterConfig"
+                displayName="TimeMaster"/>
+
+        <notificationGroup id="timemaster" displayType="BALLOON"/>
+
+        <postStartupActivity implementation="com.yuchang.timemaster.listener.ProjectStartListener"/>
+
+        <editorFactoryListener implementation="com.yuchang.timemaster.listener.EditorListener"/>
+
+        <copyPastePreProcessor implementation="com.yuchang.timemaster.listener.CopyPasteListener"/>
+
+        <toolWindow factoryClass="com.yuchang.timemaster.window.ConsoleWindow"
+                    id="TimeMaster Console"
+                    anchor="bottom"/>
+    </extensions>
+
+    <projectListeners>
+        <listener class="com.yuchang.timemaster.listener.GitListener"
+                  topic="git4idea.push.GitPushListener"/>
+    </projectListeners>
+
+    <actions>
+        <action class="com.yuchang.timemaster.action.TimerMasterOutputAction"
+                id="TimerMasterOutputAction"
+                text="TimerMasterOutput">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
