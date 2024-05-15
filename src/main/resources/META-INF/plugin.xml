@@ -8,16 +8,16 @@
     <name>TimeMaster</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor email="yuchang.su@qq.com" url="https://www.yourcompany.com">yuchang.su</vendor>
+    <vendor email="yuchang.su@qq.com" url="https://gitee.com/yuchang-su/time-master">yuchang.su</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-        <h1>模仿 VSCode 的 TimerMaster 插件</h1>
+        <h1>模仿 VSCode 的 TimeMaster 插件</h1>
         <ul>
-            <li>1. 记录编辑器的使用情况</li>
-            <li>2. 统计编码量</li>
+            <li>记录编辑器的使用情况</li>
+            <li>统计编码量</li>
         </ul>
     ]]></description>
 
@@ -55,7 +55,7 @@
     <actions>
         <action class="com.yuchang.timemaster.action.TimerMasterOutputAction"
                 id="TimerMasterOutputAction"
-                text="TimerMasterOutput">
+                text="Generate Coding Report">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
     </actions>

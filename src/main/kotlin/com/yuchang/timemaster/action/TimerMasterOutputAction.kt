@@ -55,7 +55,7 @@ class TimerMasterOutputAction : AnAction() {
                 it, "$today${System.lineSeparator().repeat(2)}" +
                         "$yesterday${System.lineSeparator().repeat(2)}$week${System.lineSeparator().repeat(2)}$average"
             )
-            Utils.info("报告生成成功@庄周de蝴蝶")
+            Utils.info("报告生成成功 @ 时间管理大师")
         }
     }
 
