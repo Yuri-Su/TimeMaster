@@ -49,7 +49,7 @@ class TimerMasterOutputAction : AnAction() {
             }
             it
         }
-        val average = "🐲 Average of Day${System.lineSeparator()}${getBodyContent(averageData)}"
+        val average = "🐲 Average of Day ${System.lineSeparator()}${getBodyContent(averageData)}"
         e.project?.let {
             Utils.consoleInfo(
                 it, "$today${System.lineSeparator().repeat(2)}" +
@@ -85,8 +85,8 @@ class TimerMasterOutputAction : AnAction() {
         添加的代码行数: ${data.addLineCount}
         删除的代码行数: ${data.removeLineCount}
         总的键入数: ${data.keyCount}
-        CTRL+C 次数: ${data.copyCount}
-        CTRL+V 次数: ${data.pasteCount}
+        CTRL C 次数: ${data.copyCount}
+        CTRL V 次数: ${data.pasteCount}
         代码提交次数: ${data.pushCount}
     """.trimIndent()
 }

@@ -40,12 +40,12 @@ class Utils {
         
         fun formatTime(seconds: Long): String {
             if (seconds < 60) {
-                return "${seconds}秒"
+                return "${seconds} 秒"
             }
             if (seconds < 3600) {
-                return "${DecimalFormat("#.0").format(seconds / 60.0)}分钟"
+                return "${DecimalFormat("#.0").format(seconds / 60.0)} 分钟"
             }
-            return "${DecimalFormat("#.0").format(seconds / 3600.0)}小时"
+            return "${DecimalFormat("#.0").format(seconds / 3600.0)} 小时"
         }
         
         private fun getTime(): Long = System.currentTimeMillis()
@@ -79,7 +79,7 @@ class Utils {
         fun createToolWindow(project: Project, toolWindow: ToolWindow) {
             val consoleView = TextConsoleBuilderFactory.getInstance().createBuilder(project).console
             consoleViews[project] = consoleView
-            val content = toolWindow.contentManager.factory.createContent(consoleView.component, "TimerMaster Output", false)
+            val content = toolWindow.contentManager.factory.createContent(consoleView.component, "TimeMaster 面板", false)
             content.component.isVisible = true
             content.isCloseable = true
             toolWindow.contentManager.addContent(content)
