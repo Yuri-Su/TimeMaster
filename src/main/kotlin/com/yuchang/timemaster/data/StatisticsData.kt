@@ -17,5 +17,6 @@ data class StatisticsData(
     var copyCount: Long = 0,
     var pasteCount: Long = 0,
     var pushCount: Long = 0,
+    var startCount: Long = 0,
     var createDate: String = Utils.getTodayYmd()
 )

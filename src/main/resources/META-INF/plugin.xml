@@ -14,12 +14,20 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-        <h1>模仿 VSCode 的 TimeMaster 插件</h1>
+        <h1>TimeMaster: 一个强大的工具</h1>
         <ul>
-            <li>记录编辑器的使用情况</li>
-            <li>统计编码量</li>
+            <li>记录编辑器的使用情况，为你提供有价值的数据，了解自己的编码习惯</li>
+            <li>统计编码量，提供有益的数据分析，更加高效和有条不紊</li>
         </ul>
     ]]></description>
+
+    <change-notes>
+        <![CDATA[
+      <ul>
+        <li><b>1.0</b> 时间管理大师发布 1.0 版本</li>
+      </ul>
+    ]]>
+    </change-notes>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
@@ -44,8 +52,14 @@
 
         <toolWindow factoryClass="com.yuchang.timemaster.window.ConsoleWindow"
                     id="TimeMaster Console"
+                    icon="/icons/window.svg"
                     anchor="bottom"/>
     </extensions>
+
+    <applicationListeners>
+        <listener class="com.yuchang.timemaster.listener.ProjectCloseListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    </applicationListeners>
 
     <projectListeners>
         <listener class="com.yuchang.timemaster.listener.GitListener"

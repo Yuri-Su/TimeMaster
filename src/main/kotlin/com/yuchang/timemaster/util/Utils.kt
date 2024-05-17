@@ -68,7 +68,7 @@ class Utils {
         
         fun consoleInfo(project: Project, msg: String) {
             if (consoleViews[project] == null) {
-                ToolWindowManager.getInstance(project).getToolWindow("TimerMaster Console")
+                ToolWindowManager.getInstance(project).getToolWindow("TimeMaster Console")
                     ?.let { createToolWindow(project, it) }
             }
             consoleViews[project]?.clear()
