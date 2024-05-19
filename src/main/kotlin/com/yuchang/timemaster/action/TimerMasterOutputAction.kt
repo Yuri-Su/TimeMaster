@@ -46,6 +46,7 @@ class TimerMasterOutputAction : AnAction() {
                 it.copyCount /= count
                 it.pasteCount /= count
                 it.pushCount /= count
+                it.startCount /= count
             }
             it
         }
@@ -85,9 +86,9 @@ class TimerMasterOutputAction : AnAction() {
         添加的代码行数: ${data.addLineCount}
         删除的代码行数: ${data.removeLineCount}
         总的键入数: ${data.keyCount}
-        打开的项目数量: ${data.startCount}
         CTRL C 次数: ${data.copyCount}
         CTRL V 次数: ${data.pasteCount}
         代码提交次数: ${data.pushCount}
+        打开项目数量: ${data.startCount}
     """.trimIndent()
 }
