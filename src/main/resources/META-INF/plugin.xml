@@ -52,7 +52,7 @@
 
         <toolWindow factoryClass="com.yuchang.timemaster.window.ConsoleWindow"
                     id="TimeMaster Console"
-                    icon="/icons/window.svg"
+                    icon="/icons/report.svg"
                     anchor="bottom"/>
     </extensions>
 
@@ -69,6 +69,7 @@
     <actions>
         <action class="com.yuchang.timemaster.action.TimerMasterOutputAction"
                 id="TimerMasterOutputAction"
+                icon="/icons/window.svg"
                 text="Generate Coding Report">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
         </action>
